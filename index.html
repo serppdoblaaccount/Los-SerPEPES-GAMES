@@ -25,7 +25,7 @@
   <div class="wrap">
     <header class="nav">
       <div class="brand"><div class="logo" aria-hidden="true">🎮</div><span>Los SerPEPES <span class="gradient">GAMES</span></span></div>
-      <div class="navtag">✦ Juega en grupo · 2D + 3D</div>
+      <div class="navtag" id="activityStatus" role="status" aria-live="polite">✦ Juega en grupo · 2D + 3D</div>
     </header>
     <main>
       <section class="hero">
@@ -55,23 +55,11 @@
           <article class="game"><div class="art night"><span>🌌</span></div><div class="gamebody"><div class="gametop"><h3>Exploradores 3D</h3><span class="mode">3D</span></div><p>Explora una pequeña arena y encuentra objetos con tu grupo.</p><button data-game="Exploradores 3D">Ver juego</button></div></article>
         </div>
       </section>
-      <p class="notice">Versión inicial de la interfaz: la creación y unión de salas online todavía necesita un servidor en tiempo real. La integración con Discord Activities también requiere configurar una aplicación de Discord.</p>
+      <p class="notice">Modo de vista previa: la integración detecta el entorno de Discord cuando se configura el Application ID. Las salas compartidas y los juegos multijugador necesitan conectar el servidor de partidas.</p>
     </main>
     <footer><span>© Los SerPEPES GAMES</span><span>Hecho para jugar con amigos ✦</span></footer>
   </div>
-  <script>
-    const announce = (message) => window.alert(message);
-    document.getElementById('createRoom').addEventListener('click', () => {
-      announce('¡La idea de la sala está lista! El siguiente paso es conectar un servidor en tiempo real para que tus amigos puedan entrar desde otros dispositivos.');
-    });
-    document.getElementById('joinRoom').addEventListener('click', () => {
-      const code = document.getElementById('roomCode').value.trim().toUpperCase();
-      if (!code) { announce('Escribe primero el código de la sala.'); return; }
-      announce('Código introducido: ' + code + '\nTodavía falta conectar las salas online para poder entrar a la partida.');
-    });
-    document.getElementById('browseGames').addEventListener('click', () => document.getElementById('gameSection').scrollIntoView({behavior:'smooth'}));
-    document.querySelectorAll('[data-game]').forEach(button => button.addEventListener('click', () => announce(button.dataset.game + '\nEste juego está en la lista inicial. El siguiente paso será implementar su jugabilidad y el multijugador.')));
-    document.getElementById('roomCode').addEventListener('input', event => { event.target.value = event.target.value.replace(/[^a-z0-9]/gi, '').toUpperCase(); });
-  </script>
+  <script type="module" src="/src/main.js"></script>
+
 </body>
 </html>
