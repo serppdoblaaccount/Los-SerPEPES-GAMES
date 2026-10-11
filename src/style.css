@@ -1,0 +1,11 @@
+/* Styles specific to the Vite/Discord Activity entry point. */
+.navtag { max-width: 100%; }
+#activityStatus { transition: color .2s ease; }
+html[data-discord-activity="true"] #activityStatus {
+  color: #86efac;
+  border-color: #86efac55;
+  background: #22c55e12;
+}
+@media (max-width: 760px) {
+  #activityStatus { display: none; }
+}
