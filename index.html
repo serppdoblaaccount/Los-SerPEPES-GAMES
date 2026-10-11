@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101020">
+  <meta name="description" content="Los SerPEPES GAMES: minijuegos 2D y 3D para jugar con amigos.">
+  <title>Los SerPEPES GAMES</title>
+  <style>
+    :root{color-scheme:dark;--bg:#101020;--panel:#191a31;--muted:#a8abc7;--text:#f8f7ff;--purple:#a78bfa;--pink:#ff79c6;--cyan:#6ee7f9;--line:#ffffff17}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#35215d 0,transparent 36%),radial-gradient(ellipse at 0% 30%,#142f50 0,transparent 28%),var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+    button,input{font:inherit}button{cursor:pointer;border:0;transition:transform .15s,filter .15s}button:hover{filter:brightness(1.08);transform:translateY(-1px)}button:focus-visible,input:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+    .wrap{width:min(1120px,calc(100% - 32px));margin:auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.4px}.logo{width:43px;height:43px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--purple),var(--pink));font-size:23px;box-shadow:0 8px 30px #a78bfa33}.navtag{color:var(--muted);font-size:13px;border:1px solid var(--line);border-radius:999px;padding:7px 12px}
+    .hero{padding:66px 0 38px;display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center}.eyebrow{color:var(--cyan);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px}.hero h1{font-size:clamp(38px,6vw,66px);line-height:1.02;letter-spacing:-2.8px;margin:15px 0}.gradient{background:linear-gradient(90deg,#c4b5fd,#f9a8d4,#67e8f9);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:560px;color:var(--muted);font-size:17px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.primary,.secondary{padding:13px 18px;border-radius:13px;font-weight:800}.primary{background:linear-gradient(110deg,#8b5cf6,#d946ef);color:white;box-shadow:0 8px 25px #a855f744}.secondary{background:#ffffff0b;color:var(--text);border:1px solid var(--line)}
+    .showcase{min-height:260px;border:1px solid #ffffff1c;border-radius:26px;background:linear-gradient(145deg,#29204b,#181a35 70%);padding:22px;position:relative;overflow:hidden}.showcase:before,.showcase:after{content:"";position:absolute;border-radius:50%;filter:blur(2px);opacity:.7}.showcase:before{width:150px;height:150px;background:#9d71ff55;right:-20px;top:-35px}.showcase:after{width:120px;height:120px;background:#4de3ee35;left:-25px;bottom:-40px}.floaties{position:relative;z-index:1;display:flex;justify-content:center;align-items:center;gap:12px;margin:15px 0 24px}.toy{width:72px;height:88px;border-radius:20px;display:grid;place-items:center;font-size:40px;box-shadow:inset 0 1px 0 #ffffff55,0 12px 22px #0003;transform:rotate(-7deg);background:linear-gradient(145deg,#8b5cf6,#5b35ad)}.toy:nth-child(2){height:106px;transform:translateY(-12px) rotate(4deg);background:linear-gradient(145deg,#fb7185,#be185d)}.toy:nth-child(3){transform:rotate(8deg);background:linear-gradient(145deg,#22d3ee,#2563eb)}.showcase strong,.showcase small{position:relative;z-index:1;display:block;text-align:center}.showcase small{color:#c4c7e3;margin-top:5px}
+    .sectionhead{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:26px 0 16px}.sectionhead h2{margin:0;font-size:24px;letter-spacing:-.7px}.sectionhead p{margin:4px 0 0;color:var(--muted);font-size:14px}.pill{font-size:12px;color:var(--cyan);border:1px solid #6ee7f933;background:#6ee7f90c;border-radius:999px;padding:6px 10px;white-space:nowrap}
+    .roombar{display:grid;grid-template-columns:1fr auto;gap:12px;background:#ffffff08;border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:30px}.roombar input{width:100%;min-width:0;background:#101020;border:1px solid var(--line);border-radius:11px;color:white;padding:12px 14px}.roombar .primary{white-space:nowrap}
+    .games{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:58px}.game{border:1px solid var(--line);border-radius:19px;overflow:hidden;background:linear-gradient(155deg,#ffffff0b,#ffffff04);min-width:0}.art{height:142px;display:grid;place-items:center;font-size:60px;position:relative;overflow:hidden}.art:before{content:"";position:absolute;width:160px;height:160px;border:1px solid #ffffff26;border-radius:38px;transform:rotate(35deg)}.art span{z-index:1;filter:drop-shadow(0 12px 12px #0004)}.art.purple{background:linear-gradient(135deg,#6338b5,#b85ce0)}.art.blue{background:linear-gradient(135deg,#155e9c,#29b6cb)}.art.orange{background:linear-gradient(135deg,#a63f48,#f59e0b)}.art.green{background:linear-gradient(135deg,#166534,#65a30d)}.art.pink{background:linear-gradient(135deg,#9d174d,#ec4899)}.art.night{background:linear-gradient(135deg,#26305f,#111827)}.gamebody{padding:15px}.gametop{display:flex;justify-content:space-between;gap:8px;align-items:center}.gametop h3{font-size:16px;margin:0}.mode{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:#ddd6fe;background:#a78bfa1b;border-radius:6px;padding:4px 6px}.gamebody p{font-size:13px;color:var(--muted);margin:8px 0 14px;min-height:40px}.gamebody button{width:100%;padding:10px;border-radius:10px;background:#ffffff0d;color:white;border:1px solid var(--line);font-weight:700}
+    footer{padding:22px 0 32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:12px}.notice{border:1px solid #fbbf2433;background:#fbbf240b;color:#f5d89b;border-radius:12px;padding:12px 14px;font-size:12px;margin:0 0 24px}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:44px}.showcase{min-height:225px}.games{grid-template-columns:repeat(2,1fr)}.navtag{display:none}.hero h1{letter-spacing:-1.6px}}
+    @media(max-width:480px){.games{grid-template-columns:1fr}.art{height:160px}.roombar{grid-template-columns:1fr}.roombar .primary{width:100%}.sectionhead{align-items:start;flex-direction:column}.hero p{font-size:15px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand"><div class="logo" aria-hidden="true">🎮</div><span>Los SerPEPES <span class="gradient">GAMES</span></span></div>
+      <div class="navtag">✦ Juega en grupo · 2D + 3D</div>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Tu próxima partida empieza aquí</div>
+          <h1>Menos aburrimiento.<br><span class="gradient">Más partidas.</span></h1>
+          <p>Reúne a tus amigos, entra en una sala y preparaos para competir en minijuegos caóticos, retos rápidos y aventuras en 2D y 3D.</p>
+          <div class="actions"><button class="primary" id="createRoom">＋ Crear una sala</button><button class="secondary" id="browseGames">Explorar juegos ↓</button></div>
+        </div>
+        <div class="showcase" aria-label="Ilustración de videojuegos">
+          <div class="floaties"><div class="toy">🕹️</div><div class="toy">👾</div><div class="toy">🚀</div></div>
+          <strong>Tu grupo. Vuestras reglas.</strong><small>En móvil, ordenador y con Discord Activities en mente.</small>
+        </div>
+      </section>
+      <section aria-labelledby="roomTitle">
+        <div class="sectionhead"><div><h2 id="roomTitle">Entra en una sala</h2><p>¿Tu amigo ya ha creado una? Usa su código.</p></div><span class="pill">👥 Multijugador</span></div>
+        <div class="roombar"><input id="roomCode" maxlength="8" autocomplete="off" placeholder="Introduce el código (ej. PEPES7)" aria-label="Código de sala"><button class="primary" id="joinRoom">Unirse a la sala →</button></div>
+      </section>
+      <section id="gameSection" aria-labelledby="gameTitle">
+        <div class="sectionhead"><div><h2 id="gameTitle">Elige un juego</h2><p>Una colección de ideas para el catálogo inicial.</p></div><span class="pill">🎲 Minijuegos</span></div>
+        <div class="games">
+          <article class="game"><div class="art purple"><span>🧱</span></div><div class="gamebody"><div class="gametop"><h3>Bloques Locos</h3><span class="mode">2D</span></div><p>Salta, esquiva obstáculos y llega a la meta antes que tus amigos.</p><button data-game="Bloques Locos">Ver juego</button></div></article>
+          <article class="game"><div class="art blue"><span>🚀</span></div><div class="gamebody"><div class="gametop"><h3>Cohetes en Caos</h3><span class="mode">2D</span></div><p>Una carrera frenética donde cualquier choque puede cambiarlo todo.</p><button data-game="Cohetes en Caos">Ver juego</button></div></article>
+          <article class="game"><div class="art orange"><span>🏁</span></div><div class="gamebody"><div class="gametop"><h3>Mini Kart Party</h3><span class="mode">3D</span></div><p>Compite en circuitos pequeños llenos de curvas y sorpresas.</p><button data-game="Mini Kart Party">Ver juego</button></div></article>
+          <article class="game"><div class="art green"><span>🧩</span></div><div class="gamebody"><div class="gametop"><h3>Reto Relámpago</h3><span class="mode">2D</span></div><p>Resuelve pruebas rápidas y suma puntos para tu equipo.</p><button data-game="Reto Relámpago">Ver juego</button></div></article>
+          <article class="game"><div class="art pink"><span>🎨</span></div><div class="gamebody"><div class="gametop"><h3>Dibujo Secreto</h3><span class="mode">2D</span></div><p>Dibuja una palabra y descubre quién consigue adivinarla.</p><button data-game="Dibujo Secreto">Ver juego</button></div></article>
+          <article class="game"><div class="art night"><span>🌌</span></div><div class="gamebody"><div class="gametop"><h3>Exploradores 3D</h3><span class="mode">3D</span></div><p>Explora una pequeña arena y encuentra objetos con tu grupo.</p><button data-game="Exploradores 3D">Ver juego</button></div></article>
+        </div>
+      </section>
+      <p class="notice">Versión inicial de la interfaz: la creación y unión de salas online todavía necesita un servidor en tiempo real. La integración con Discord Activities también requiere configurar una aplicación de Discord.</p>
+    </main>
+    <footer><span>© Los SerPEPES GAMES</span><span>Hecho para jugar con amigos ✦</span></footer>
+  </div>
+  <script>
+    const announce = (message) => window.alert(message);
+    document.getElementById('createRoom').addEventListener('click', () => {
+      announce('¡La idea de la sala está lista! El siguiente paso es conectar un servidor en tiempo real para que tus amigos puedan entrar desde otros dispositivos.');
+    });
+    document.getElementById('joinRoom').addEventListener('click', () => {
+      const code = document.getElementById('roomCode').value.trim().toUpperCase();
+      if (!code) { announce('Escribe primero el código de la sala.'); return; }
+      announce('Código introducido: ' + code + '\nTodavía falta conectar las salas online para poder entrar a la partida.');
+    });
+    document.getElementById('browseGames').addEventListener('click', () => document.getElementById('gameSection').scrollIntoView({behavior:'smooth'}));
+    document.querySelectorAll('[data-game]').forEach(button => button.addEventListener('click', () => announce(button.dataset.game + '\nEste juego está en la lista inicial. El siguiente paso será implementar su jugabilidad y el multijugador.')));
+    document.getElementById('roomCode').addEventListener('input', event => { event.target.value = event.target.value.replace(/[^a-z0-9]/gi, '').toUpperCase(); });
+  </script>
+</body>
+</html>
