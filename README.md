@@ -2,7 +2,22 @@
 
 Plataforma web de minijuegos 2D y 3D para jugar con amigos. La aplicación se está preparando para funcionar como una Discord Activity mediante el paquete oficial `@discord/embedded-app-sdk`.
 
-## Estado actual
+## Juego nuevo: Suspects: Mansion Revived
+
+Primera demo fan-made jugable en navegador: [Abrir Suspects: Mansion Revived](./suspects-mansion-revived/).
+
+- [x] Logo y pantalla de entrada con identidad propia.
+- [x] Mapa 2D de la mansión adaptable a móvil y ordenador.
+- [x] Movimiento con teclado y controles táctiles.
+- [x] Exploración de habitaciones y búsqueda de tres pistas.
+- [x] Temporizador, objetivos y resolución del misterio.
+- [ ] Salas online con códigos e invitaciones.
+- [ ] Multijugador real, roles y reuniones sincronizadas.
+- [ ] Personajes, cosméticos y más mapas.
+
+**Estado:** versión 0.1 local para probar la exploración. Todavía no es multijugador online; esa parte necesita un servidor en tiempo real y se desarrollará después.
+
+## Estado de Los SerPEPES GAMES
 
 - [x] Interfaz adaptable para móvil y ordenador.
 - [x] Catálogo visual inicial de juegos 2D y 3D.
